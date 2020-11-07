@@ -3,7 +3,7 @@
 		<title>video links</title>
 
 		<!<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+		<!<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<link re="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
@@ -127,22 +127,35 @@
 			type:'inline',
 			midClick:true
 		})
-	</script>		
+	</script>
 	</body>
 <footer>
-	<div class="pagination">
-	<a href="#"> &laquo; </a>
-	<a href="#" class="active">1</a>
-	<a href="#">3</a>
-	<a href="#">4</a>
-	<a href="#">5</a>
-	<a href="#">6</a>
-	<a href="#">7</a>
-	<a href="#">8</a>
-	<a href="#">9</a>
-	<a href="#">10</a>
-	<a href="#">&raquo</a>
-	</div>
+	<ul>
+	<li><a href="#" class="prev">< prev</a></li>
+	<li class="pageNumber active"><a href="#" class="active">1</a></li>
+	<li class="pageNumber"><a href="two.html"> 2 </a></li>
+	<li class="pageNumber"><a href="#">3</a></li>
+	<li class="pageNumber"><a href="#">4</a></li>
+	<li class="pageNumber"><a href="#">5</a></li>
+	<li class="pageNumber"><a href="#">6</a></li>
+	<li class="pageNumber"><a href="#">7</a></li>
+	<li class="pageNumber"><a href="#">8</a></li>
+  <li class="pageNumber"><a href="#">9</a></li>
+	<li class="pageNumber"><a href="#">10</a></li>
+	<li><a href="two.html" class="next">Next ></a></li>
+</ul>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.next').click(function(){
+			$('.pagination').find('.pageNumber.active').next().addClass('active');
+						$('.pagination').find('.pageNumber.active').prev().addClass('active');
+		})
+		$('.prev').click(function(){
+			$('.pagination').find('.pageNumber.active').prev().addClass('active');
+						$('.pagination').find('.pageNumber.active').next().addClass('active');
+		})
+	})
 </footer>
 
 </html>
