@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>video links</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link re="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+		<link rel="stylesheet" href="stylesheet.css">
+
+	</head>
+	<body>
+	<nav>
+		<a class="active" href="#">All</a>
+		<a href="#">videos</a>
+		<a href="#">links</a>
+		<a href="#">videos</a>
+		<input type="text" placeholder="Search...">
+	</nav>
+	<div class="container">
+		<div class="video">
+			<div class="desc">
+
+			</div>
+		</div>
+	</div>
+	<script>
+
+	</script>
+	<script src="display.js">
+	</script>
+	</body>
+<footer>
+	<ul>
+	<li><a href="webpage.html" class="prev">< prev</a></li>
+	<li class="pageNumber"><a href="webpage.html">1</a></li>
+	<li class="pageNumber active"><a href="2.html"> 2 </a></li>
+	<li class="pageNumber active"><a href="3.html" class="active">3</a></li>
+	<li class="pageNumber"><a href="#">4</a></li>
+	<li class="pageNumber"><a href="#">5</a></li>
+	<li class="pageNumber"><a href="#">6</a></li>
+	<li class="pageNumber"><a href="#">7</a></li>
+	<li class="pageNumber"><a href="#">8</a></li>
+  <li class="pageNumber"><a href="#">9</a></li>
+	<li class="pageNumber"><a href="#">10</a></li>
+	<li><a href="#" class="next">Next ></a></li>
+</ul>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.next').click(function(){
+			$('.pagination').find('.pageNumber.active').next().addClass('active');
+						$('.pagination').find('.pageNumber.active').prev().addClass('active');
+		})
+		$('.prev').click(function(){
+			$('.pagination').find('.pageNumber.active').prev().addClass('active');
+						$('.pagination').find('.pageNumber.active').next().addClass('active');
+		})
+	})>
+</footer>
+
+</html>
