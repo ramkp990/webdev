@@ -1,4 +1,3 @@
-const data=
 [
     {
         "name": "3g",
@@ -6420,33 +6419,4 @@ const data=
         "name": "zimbabwe",
         "link": "x-Bc7ssevU8"
     }
-];
-
-  newdata=JSON.stringify(data);
-  finaldata=JSON.parse(newdata);
-//  console.log(finaldata[0]["link"]);
-  //finalData = newdata.replace(/\\/g, '');
-
-let videoDiv = document.getElementsByClassName("video")[0];
-console.debug(videoDiv);
-finaldata.forEach(element => {
-    let contentDiv = document.createElement("div");
-    let videoFrame = document.createElement("iframe");
-    let description = document.createElement("p");
-    videoFrame.src = element.link;
-    videoFrame.width="250";
-    videoFrame.height="250";
-    description.innerHTML=element.name;
-    contentDiv.appendChild(videoFrame);
-    contentDiv.appendChild(description);
-    videoDiv.appendChild(contentDiv);
-});
-//   var items=document.getElementsByTagName('iframe');
-//   console.log(items);
-//   items.width="250";
-//   items.height="250";
-//   for(i=0;i<20;i++){
-//     items[i].src=finaldata[i]["link"];
-//   }
-//   var descr=document.getElementsByClassName('desc');
-//   console.log(descr);
+]

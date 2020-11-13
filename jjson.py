@@ -1,7 +1,7 @@
 import json
 stocks = []
 
-with open('3.txt', 'r') as data:
+with open('videolink', 'r') as data:
     for line in data:
         line = line.strip()
         ldata = line.split(',')
@@ -10,7 +10,7 @@ with open('3.txt', 'r') as data:
             'link':ldata[1],
         }
         stocks.append(temp_stock)
-with open('3.json', 'w') as fp:
+with open('video.json', 'w') as fp:
     json.dump(stocks, fp, indent=4)
 from pprint import pprint
 pprint(stocks)
