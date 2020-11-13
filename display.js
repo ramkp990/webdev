@@ -6417,7 +6417,8 @@ const data=
     "link": "https://www.youtube.com/embed/x-Bc7ssevU8"
 }
 ];
-
+  var pageno=1;
+  var lastpageno=0;
   newdata=JSON.stringify(data);
   finaldata=JSON.parse(newdata);
 //  console.log(finaldata[0]["link"]);
@@ -6430,17 +6431,23 @@ const data=
   };
     const observer= new IntersectionObserver(handleIntersect,options);
     observer.observe(document.querySelector("footer"));
-
+    getData();
+    pageno=pageno+1;
+    lastpageno=lastpageno+1;
   });
     function handleIntersect(entries){
       if(entries[0].isIntersecting){
         console.warn("something is intersecting with the viewport");
+        getData();
+        pageno=pageno+1;
+        lastpageno=lastpageno+1;
       }
     }
   function getData(){
 let videoDiv = document.getElementsByClassName("video")[0];
 console.debug(videoDiv);
-finaldata.forEach(element => {
+sliceddata=finaldata.slice(lastpageno*20,pageno*20);
+sliceddata.forEach(element => {
     let contentDiv = document.createElement("div");
     let videoFrame = document.createElement("iframe");
     let description = document.createElement("p");
