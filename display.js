@@ -6423,6 +6423,15 @@ const data=
   finaldata=JSON.parse(newdata);
 //  console.log(finaldata[0]["link"]);
   //finalData = newdata.replace(/\\/g, '');
+    var searchBar=document.getElementById("searchBar");
+
+    searchBar.addEventListener('keyup',(e) => {
+    const searchString=e.target.value.toLowerCase();
+      const filteredCharacters=finaldata.filter((character) => {
+        return character.name.includes(searchString);
+    });
+    displayCharacters(filteredCharacters);
+  });
   document.addEventListener("DOMContentLoaded",() => {
   let options={
     root:null,
@@ -6459,6 +6468,20 @@ sliceddata.forEach(element => {
     contentDiv.appendChild(description);
     videoDiv.appendChild(contentDiv);
 })};
+
+const displayCharacters = (characters) => {
+  const htmlString = characters
+  .map((character) => {
+    return `
+    <div class="character">
+    <iframe width="250" height="250" src="${character.link}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="desc">${character.name}</div>
+    </div>
+    `;
+  })
+  .join('');
+  document.getElementById("contained").innerHTML=htmlString;
+}
 //   var items=document.getElementsByTagName('iframe');
 //   console.log(items);
 //   items.width="250";

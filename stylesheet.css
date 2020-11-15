@@ -1,5 +1,5 @@
 .container{
-	padding:100px;
+	padding:10px 100px;
 	max-width:3000px;
 	margin:auto;
 	background:#ffffff;
@@ -67,6 +67,27 @@ nav input[type=text]{
 	border-radius:10px;
 	text-transform:lowercase;
 	outline:none;
+}
+
+#searchBar{
+		width:50%;
+		height:10px;
+		border-radius:3px;
+		border:3px solid #eaeaea;
+		padding:10px 10px;
+		font-size:12px;
+}
+
+#searchWrapper{
+	padding: 100px 600px;
+	position:center;
+}
+
+#searchWrapper::after{
+	content:'';
+	position:absolute;
+	top=2px;
+	right:15px;
 }
 .pagination{
 	display:inline-block;
